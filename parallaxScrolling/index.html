@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="images/stars.png" id="stars">
+        <img src="images/moon.png" id="moon">
+        <img src="images/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="images/mountains_front.png" id="mountains_front">
+    </section>
+
+    <div class="clouds">
+        <img src="images/cloud1.png" style="--i:1;">
+        <img src="images/cloud2.png" style="--i:2;">
+        <img src="images/cloud3.png" style="--i:3;">
+        <img src="images/cloud4.png" style="--i:4;">
+        <img src="images/cloud5.png" style="--i:5;">
+        <img src="images/cloud1.png" style="--i:10;">
+        <img src="images/cloud2.png" style="--i:9;">
+        <img src="images/cloud3.png" style="--i:8;">
+        <img src="images/cloud4.png" style="--i:7;">
+        <img src="images/cloud5.png" style="--i:6;">
+    </div>
+
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe est maxime fuga quas perspiciatis debitis aliquam a natus nam, cupiditate, nemo doloremque? Adipisci asperiores consectetur ea. Tenetur harum temporibus possimus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nulla quisquam nemo sint commodi reprehenderit dolorum. Fugit, dolorem, corporis eligendi suscipit rerum accusantium odio vero, reprehenderit ratione cum sed ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, libero perspiciatis! Magnam culpa nisi necessitatibus? Accusamus a, quo accusantium laudantium beatae, atque modi quia sed est non officiis labore ullam?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere soluta, eveniet sed explicabo vitae ratione quisquam harum. Totam velit laudantium necessitatibus non illum minus voluptate cupiditate dolorum repellendus, soluta dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nemo voluptatum quibusdam deleniti esse, ut voluptatibus ullam minus rerum libero excepturi eos pariatur quaerat rem alias sequi non eligendi soluta!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe est maxime fuga quas perspiciatis debitis aliquam a natus nam, cupiditate, nemo doloremque? Adipisci asperiores consectetur ea. Tenetur harum temporibus possimus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nulla quisquam nemo sint commodi reprehenderit dolorum. Fugit, dolorem, corporis eligendi suscipit rerum accusantium odio vero, reprehenderit ratione cum sed ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, libero perspiciatis! Magnam culpa nisi necessitatibus? Accusamus a, quo accusantium laudantium beatae, atque modi quia sed est non officiis labore ullam?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere soluta, eveniet sed explicabo vitae ratione quisquam harum. Totam velit laudantium necessitatibus non illum minus voluptate cupiditate dolorum repellendus, soluta dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nemo voluptatum quibusdam deleniti esse, ut voluptatibus ullam minus rerum libero excepturi eos pariatur quaerat rem alias sequi non eligendi soluta!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe est maxime fuga quas perspiciatis debitis aliquam a natus nam, cupiditate, nemo doloremque? Adipisci asperiores consectetur ea. Tenetur harum temporibus possimus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nulla quisquam nemo sint commodi reprehenderit dolorum. Fugit, dolorem, corporis eligendi suscipit rerum accusantium odio vero, reprehenderit ratione cum sed ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, libero perspiciatis! Magnam culpa nisi necessitatibus? Accusamus a, quo accusantium laudantium beatae, atque modi quia sed est non officiis labore ullam?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere soluta, eveniet sed explicabo vitae ratione quisquam harum. Totam velit laudantium necessitatibus non illum minus voluptate cupiditate dolorum repellendus, soluta dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nemo voluptatum quibusdam deleniti esse, ut voluptatibus ullam minus rerum libero excepturi eos pariatur quaerat rem alias sequi non eligendi soluta!</p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 3 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+
+</html>
